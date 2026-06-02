@@ -6,16 +6,34 @@
 //
 
 import SwiftUI
-
+ 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        NavigationStack {
+            VStack (spacing: 50){
+                NavigationLink("Button"){
+                    Buttons()
+                }
+                
+                NavigationLink("Edit") {
+                    EditableButton()
+                }
+                
+                NavigationLink("Edit") {
+                    PasteableButton()
+                }
+                
+                NavigationLink("Check") {
+                    Text("Checking Navigation link")
+                        .padding(40)
+                        .navigationTitle("Checking")
+                }
+            }
+            
         }
-        .padding()
+        .navigationTitle("Home")
+        
     }
 }
 
